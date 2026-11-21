@@ -1,0 +1,23 @@
+FoSAM: Foveated Segment Anything
+Copyright (c) 2025 FoSAM Authors
+
+The code of this repository is released under the MIT License (see LICENSE), except for
+the files listed below.
+
+The following files are derived from EfficientSAM
+(https://github.com/yformer/EfficientSAM), Copyright (c) Meta Platforms, Inc. and
+affiliates, licensed under the Apache License, Version 2.0. A copy of that license is in
+licenses/LICENSE-EfficientSAM. EfficientSAM in turn builds on Segment Anything
+(https://github.com/facebookresearch/segment-anything, Apache License 2.0).
+
+  fosam/modeling/image_encoder.py        modified: the ViT blocks run on a selected subset
+                                         of the tokens, which is scattered back before the
+                                         neck; attention masks the padding of a batch
+  fosam/modeling/foveated_sam.py         modified: single gaze point prompt, single mask
+                                         output, token selector losses, weight loading
+  fosam/modeling/mask_decoder.py         modified: one extra output token
+  fosam/modeling/two_way_transformer.py
+  fosam/modeling/mlp.py
+
+The pretrained EfficientSAM weights that FoSAM is initialised from are not part of this
+repository; they are distributed by the EfficientSAM authors under their license.
